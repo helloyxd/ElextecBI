@@ -1,0 +1,1 @@
+java -jar jybi-job-executor-sample-springboot-1.9.0-SNAPSHOT.jar
