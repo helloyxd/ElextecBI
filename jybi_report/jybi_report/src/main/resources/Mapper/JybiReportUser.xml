@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jybi.report.dao.JybiReportUserDao">
+
+    <resultMap id="UserInfo" type="com.jybi.report.model.User" >
+        <result column="ID" property="id" />
+        <result column="USER_NAME" property="userName" />
+        <result column="USER_PASSWORD" property="password" />
+        <result column="FULL_NAME" property="fullNaame" />
+        <result column="DEPARTMENT_ID" property="departmentId" />
+        <result column="STATUS" property="status" />
+        <result column="CREATER" property="creater" />
+        <result column="CREATE_TIME" property="createTime" />
+    </resultMap>
+
+    <select id="queryAll" resultMap="UserInfo">
+        select *
+        FROM JYBI_RPT_USER
+    </select>
+
+    <select id="validate" resultMap="UserInfo">
+        SELECT ID,USER_NAME,FULL_NAME
+        FROM JYBI_RPT_USER
+        WHERE USER_NAME = #{userName}
+        AND USER_PASSWORD = #{password}
+        AND STATUS = 1
+    </select>
+
+    <insert id="save" parameterType="com.jybi.report.model.User">
+        INSERT INTO JYBI_RPT_USER (
+        ID,
+        USER_NAME,
+        USER_PASSWORD,
+        FULL_NAME,
+        DEPARTMENT_ID,
+        STATUS,
+        CREATER,
+        CREATE_TIME
+        ) VALUES (
+        #{id},
+        #{userName},
+        #{password},
+        #{fullNaame,jdbcType=VARCHAR},
+        #{departmentId,jdbcType=VARCHAR},
+        1,
+        #{creater,jdbcType=VARCHAR},
+        sysdate
+        )
+    </insert>
+
+    <update id="updateInfo" parameterType="com.jybi.report.model.ForeignFinancing">
+        UPDATE JYBI_RPT_USER
+        SET
+        FULL_NAME= #{fullNaame,jdbcType=VARCHAR},
+        DEPARTMENT_ID= #{departmentId,jdbcType=VARCHAR},
+        STATUS= #{status}
+        WHERE ID= #{id}
+    </update>
+
+
+    <select id="queryByUserName" resultMap="UserInfo">
+        SELECT *
+        FROM JYBI_RPT_USER
+        WHERE USER_NAME=#{userName}
+    </select>
+
+    <delete id="delete" >
+        delete from JYBI_RPT_USER
+        WHERE ID = #{id}
+    </delete>
+
+
+
+
+</mapper>

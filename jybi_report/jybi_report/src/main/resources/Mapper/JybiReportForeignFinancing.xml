@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jybi.report.dao.JybiReportForeignFinancingDao">
+
+    <resultMap id="ForeignFinancing" type="com.jybi.report.model.ForeignFinancing" >
+        <result column="ID" property="id" />
+        <result column="ORG_ID" property="orgId" />
+        <result column="ORG_NAME" property="orgName" />
+        <result column="TYPE" property="type" />
+        <result column="REGION_COM_NAME" property="regionComName" />
+        <result column="BANK_COM_NAME" property="bankComName" />
+        <result column="LOAN_AMOUNT" property="loanAmount" />
+        <result column="LOAN_DATE" property="loanDate" />
+        <result column="APPOINTMENT_REPAYMENT_DATE" property="appointmentRepaymentDate" />
+        <result column="YEAR_COMPREHENSIVE_COST" property="yearComprehensiveCost" />
+        <result column="COST_PAY_TYPE" property="costPayType" />
+        <result column="INTEREST_PAY_TIME" property="interestPayTime" />
+        <result column="PRESS_INFO" property="pressInfo" />
+        <result column="CREDIT_TERM" property="creditTerm" />
+        <result column="PRESS_TERM" property="pressTerm" />
+        <result column="REMARK" property="remark" />
+        <result column="CREATE_TIME" property="createTime" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+       j."ID",
+       j.ORG_ID,
+       j."TYPE",
+       j.REGION_COM_NAME,
+       j.BANK_COM_NAME,
+       j.LOAN_AMOUNT,
+       j.LOAN_DATE,
+       j.APPOINTMENT_REPAYMENT_DATE,
+       j.YEAR_COMPREHENSIVE_COST,
+       j.COST_PAY_TYPE,
+       j.INTEREST_PAY_TIME,
+       j.PRESS_INFO,
+       j.CREDIT_TERM,
+       j.PRESS_TERM,
+       j."REMARK",
+       j.CREATE_TIME
+    </sql>
+
+    <select id="queryAll" resultMap="ForeignFinancing">
+        select <include refid="Base_Column_List" />,o."org_name" AS ORG_NAME
+        FROM JYBI_RPT_FOREIGN_FINANCING j
+        LEFT JOIN (select "org_id","org_name" FROM JYBI_RPT_ORG_STAGES GROUP BY "org_id","org_name") o ON j.ORG_ID = o."org_id"
+        ORDER BY j.ORG_ID,j."TYPE",j.REGION_COM_NAME
+    </select>
+
+    <select id="pageList" parameterType="java.util.HashMap" resultMap="ForeignFinancing">
+        SELECT * FROM (
+        SELECT u.*,ROWNUM RN
+        FROM (select <include refid="Base_Column_List" />,o."org_name" AS ORG_NAME
+        FROM JYBI_RPT_FOREIGN_FINANCING j
+        LEFT JOIN (select "org_id","org_name" FROM JYBI_RPT_ORG_STAGES
+        GROUP BY "org_id","org_name") o ON j.ORG_ID = o."org_id") u WHERE ROWNUM <![CDATA[ <= ]]> #{pageNo} * #{pageSize} ORDER BY u.create_time DESC)
+        <trim prefix="WHERE" prefixOverrides="AND | OR" >
+            RN <![CDATA[ >= ]]> (#{pageNo}-1) * #{pageSize} + 1
+            <if test="objName != null and objName != ''">
+                AND (org_name like concat(concat('%',#{objName}),'%') OR region_com_name like concat(concat('%',#{objName}),'%'))
+            </if>
+        </trim>
+        ORDER BY create_time DESC
+    </select>
+
+    <select id="pageListCount" parameterType="java.util.HashMap" resultType="int">
+        SELECT count(1)
+        FROM JYBI_RPT_FOREIGN_FINANCING u
+        LEFT JOIN (select "org_id","org_name" FROM JYBI_RPT_ORG_STAGES GROUP BY "org_id","org_name") o ON u.ORG_ID = o."org_id"
+        <trim prefix="WHERE" prefixOverrides="AND | OR" >
+            <if test="objName != null and objName != ''">
+                AND (o."org_name" like concat(concat('%',#{objName}),'%') OR u.region_com_name like concat(concat('%',#{objName}),'%'))
+            </if>
+        </trim>
+        ORDER BY u.create_time DESC
+    </select>
+
+    <insert id="save" parameterType="com.jybi.report.model.ForeignFinancing">
+        INSERT INTO JYBI_RPT_FOREIGN_FINANCING (
+        ID,
+        ORG_ID,
+        "TYPE",
+        REGION_COM_NAME,
+        BANK_COM_NAME,
+        LOAN_AMOUNT,
+        LOAN_DATE,
+        APPOINTMENT_REPAYMENT_DATE,
+        YEAR_COMPREHENSIVE_COST,
+        COST_PAY_TYPE,
+        INTEREST_PAY_TIME,
+        PRESS_INFO,
+        CREDIT_TERM,
+        PRESS_TERM,
+        "REMARK",
+        CREATE_TIME
+        ) VALUES (
+        #{id},
+        #{orgId},
+        #{type},
+        #{regionComName},
+        #{bankComName,jdbcType=VARCHAR},
+        #{loanAmount,jdbcType=DECIMAL},
+        #{loanDate,jdbcType=TIMESTAMP},
+        #{appointmentRepaymentDate,jdbcType=TIMESTAMP},
+        #{yearComprehensiveCost,jdbcType=DECIMAL},
+        #{costPayType,jdbcType=VARCHAR},
+        #{interestPayTime,jdbcType=TIMESTAMP},
+        #{pressInfo,jdbcType=VARCHAR},
+        #{creditTerm,jdbcType=VARCHAR},
+        #{pressTerm,jdbcType=VARCHAR},
+        #{remark,jdbcType=VARCHAR},
+        sysdate
+        )
+    </insert>
+
+    <update id="updateInfo" parameterType="com.jybi.report.model.ForeignFinancing">
+        UPDATE JYBI_RPT_FOREIGN_FINANCING
+        SET
+        ORG_ID= #{orgId},
+        "TYPE"= #{type},
+        REGION_COM_NAME= #{regionComName},
+        BANK_COM_NAME= #{bankComName,jdbcType=VARCHAR},
+        LOAN_AMOUNT= #{loanAmount,jdbcType=DECIMAL},
+        LOAN_DATE= #{loanDate,jdbcType=TIMESTAMP},
+        APPOINTMENT_REPAYMENT_DATE= #{appointmentRepaymentDate,jdbcType=TIMESTAMP},
+        YEAR_COMPREHENSIVE_COST= #{yearComprehensiveCost,jdbcType=DECIMAL},
+        COST_PAY_TYPE= #{costPayType,jdbcType=VARCHAR},
+        INTEREST_PAY_TIME= #{interestPayTime,jdbcType=TIMESTAMP},
+        PRESS_INFO= #{pressInfo,jdbcType=VARCHAR},
+        CREDIT_TERM= #{creditTerm,jdbcType=VARCHAR},
+        PRESS_TERM= #{pressTerm,jdbcType=VARCHAR},
+        "REMARK"= #{remark,jdbcType=VARCHAR}
+        WHERE ID= #{id}
+    </update>
+
+    <delete id="delete" >
+        delete from JYBI_RPT_FOREIGN_FINANCING
+        WHERE ID = #{id}
+    </delete>
+
+
+
+
+
+
+</mapper>

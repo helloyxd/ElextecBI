@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jybi.report.dao.JybiReportOrgStagesDao">
+
+    <resultMap id="OrgStages" type="com.jybi.report.model.OrgStages" >
+        <result column="id" property="id" />
+        <result column="org_id" property="orgId" />
+        <result column="org_code" property="orgCode" />
+        <result column="org_name" property="orgName" />
+        <result column="region_com_code" property="regionComCode" />
+        <result column="region_com_name" property="regionComName" />
+        <result column="project_com_id" property="projectComId" />
+        <result column="project_com_code" property="projectComCode" />
+        <result column="project_com_name" property="projectComName" />
+        <result column="project_id" property="projectId" />
+        <result column="project_code" property="projectCode" />
+        <result column="project_name" property="projectName" />
+        <result column="project_by_stages_id" property="projectByStagesId" />
+        <result column="project_by_stages_code" property="projectByStagesCode" />
+        <result column="project_by_stages" property="projectByStages" />
+        <result column="proj_short_name" property="projShortName" />
+        <result column="stages_short_name" property="stagesShortName" />
+    </resultMap>
+
+    <select id="queryAllOrg" resultMap="OrgStages">
+        select "org_id","org_name"
+        FROM JYBI_RPT_ORG_STAGES
+        GROUP BY "org_id","org_name"
+    </select>
+
+    <select id="queryByOrgId" resultMap="OrgStages">
+        select "region_com_name"
+        FROM JYBI_RPT_ORG_STAGES
+        where "org_id" = #{orgId}
+        GROUP BY "region_com_name"
+    </select>
+
+
+
+</mapper>
