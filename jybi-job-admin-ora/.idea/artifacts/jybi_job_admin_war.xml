@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="jybi-job-admin:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="jybi-job-admin.war">
+      <element id="artifact" artifact-name="jybi-job-admin:war exploded" />
+    </root>
+  </artifact>
+</component>

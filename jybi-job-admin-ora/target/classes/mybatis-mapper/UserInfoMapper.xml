@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jybi.job.admin.dao.UserInfoDao">
+	
+	<resultMap id="UserInfo" type="com.jybi.job.admin.core.model.UserInfo" >
+		<result column="id" property="id" />
+	    <result column="login_name" property="loginName" />
+	    <result column="password" property="password" />
+	    <result column="user_name" property="userName" />
+		<result column="age" property="age" />
+		<result column="sex" property="sex" />
+		<result column="position" property="position" />
+		<result column="create_time" property="createTime" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		u.id,
+		u.login_name,
+		u.password,
+		u.user_name,
+		u.age,
+		u.sex,
+		u.position,
+		u.create_time
+	</sql>
+
+	<select id="validate" resultMap="UserInfo">
+		SELECT <include refid="Base_Column_List" />
+		FROM JYBI_JOB_USER_INFO u
+		WHERE u.login_name = #{loginName}
+		AND u.password = #{password}
+	</select>
+
+
+
+	<select id="pageList" parameterType="java.util.HashMap" resultMap="UserInfo">
+		SELECT * FROM (
+		SELECT <include refid="Base_Column_List" />,ROWNUM RN
+		FROM (SELECT * FROM JYBI_JOB_USER_INFO) u WHERE ROWNUM <![CDATA[ <= ]]> #{offset}+#{pagesize} ORDER BY u.create_time DESC)
+		<trim prefix="WHERE" prefixOverrides="AND | OR" >
+			RN <![CDATA[ >= ]]> #{offset}+1
+			<if test="userName != null and userName != ''">
+				AND user_name like concat(concat('%',#{userName}),'%')
+			</if>
+		</trim>
+		ORDER BY create_time DESC
+	</select>
+
+	<select id="pageListCount" parameterType="java.util.HashMap" resultType="int">
+		SELECT count(1)
+		FROM JYBI_JOB_USER_INFO u
+		<trim prefix="WHERE" prefixOverrides="AND | OR" >
+			<if test="userName != null and userName != ''">
+				AND u.user_name like concat(concat('%',#{userName}),'%')
+			</if>
+		</trim>
+		ORDER BY u.create_time DESC
+	</select>
+
+	<select id="selectOne" resultMap="UserInfo">
+		SELECT <include refid="Base_Column_List" />
+		FROM JYBI_JOB_USER_INFO u
+		WHERE u.id=#{id}
+	</select>
+
+	<select id="selectByLoginName" resultMap="UserInfo">
+		SELECT <include refid="Base_Column_List" />
+		FROM JYBI_JOB_USER_INFO u
+		WHERE u.login_name=#{loginName}
+	</select>
+
+	<insert id="save" parameterType="com.jybi.job.admin.core.model.UserInfo">
+		INSERT INTO JYBI_JOB_USER_INFO (
+		id,
+		login_name,
+		password,
+		user_name,
+		age,
+		sex,
+		"position",
+		create_time
+		) VALUES (
+		#{id},
+		#{loginName},
+		#{password},
+		#{userName},
+		#{age},
+		#{sex},
+		#{position},
+		#{createTime}
+		)
+	</insert>
+
+	<update id="updatePassword" parameterType="com.jybi.job.admin.core.model.UserInfo">
+		UPDATE JYBI_JOB_USER_INFO
+		SET
+		password= #{password}
+		WHERE id= #{id}
+	</update>
+
+	<update id="updateInfo" parameterType="com.jybi.job.admin.core.model.UserInfo">
+		UPDATE JYBI_JOB_USER_INFO
+		SET
+		user_name= #{userName},
+		age= #{age},
+		sex=#{sex}
+		WHERE id= #{id}
+	</update>
+
+	<delete id="delete" >
+		delete from JYBI_JOB_USER_INFO
+		WHERE id = #{id}
+	</delete>
+
+
+</mapper>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="xxl-job-admin:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="xxl-job-admin-1.9.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="xxl-job-admin:war exploded" />
+    </root>
+  </artifact>
+</component>
