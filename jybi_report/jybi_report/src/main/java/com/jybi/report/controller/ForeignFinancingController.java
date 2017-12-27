@@ -45,6 +45,12 @@ public class ForeignFinancingController {
         return new ReturnT<Map<String,Object>>(jybiReportForeignFinancingSerivce.pageList(page,limit,objName));
     }
 
+//    @RequestMapping(value ="/testList",method = RequestMethod.POST)
+//    @ResponseBody
+//    public ReturnT<List<ForeignFinancing>> testList(){
+//        return new ReturnT<List<ForeignFinancing>>(jybiReportForeignFinancingSerivce.queryAll());
+//    }
+
     /**
      * 获取全部对外融资数据
      * */
