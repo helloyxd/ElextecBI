@@ -95,17 +95,17 @@ public class UpdateUtil {
                     "'"+id+"'"+","+
                     (list.get(i).get("集团guid")==null ? "''," : "'"+list.get(i).get("集团guid")+"'"+",") +
                     (list.get(i).get("集团code")==null ? "''," : "'"+list.get(i).get("集团code")+"'"+",") +
-                    (list.get(i).get("集团")==null ? list.get(i).get("集团")+"," : "'"+list.get(i).get("集团")+"'"+",") +
-                    (list.get(i).get("区域公司code")==null ? list.get(i).get("区域公司code")+"," : "'"+list.get(i).get("区域公司code")+"'"+",") +
-                    (regionComName==null ? regionComName+"," : "'"+regionComName+"'"+",") +
+                    (list.get(i).get("集团")==null ? "''," : "'"+list.get(i).get("集团")+"'"+",") +
+                    (list.get(i).get("区域公司code")==null ? "''," : "'"+list.get(i).get("区域公司code")+"'"+",") +
+                    (regionComName==null ? "''," : "'"+regionComName+"'"+",") +
                     (list.get(i).get("项目公司guid")==null ? "''," : "'"+list.get(i).get("项目公司guid")+"'"+",") +
                     (list.get(i).get("项目公司code")==null ? "''," : "'"+list.get(i).get("项目公司code")+"'"+",") +
-                    (list.get(i).get("项目公司")==null ? list.get(i).get("项目公司")+"," : "'"+list.get(i).get("项目公司")+"'"+",") +
+                    (list.get(i).get("项目公司")==null ? "''," : "'"+list.get(i).get("项目公司")+"'"+",") +
                     (list.get(i).get("项目guid")==null ? "''," : "'"+list.get(i).get("项目guid")+"'"+",") +
                     (list.get(i).get("项目code")==null ? "''," : "'"+list.get(i).get("项目code")+"'"+",") +
-                    (list.get(i).get("项目")==null ? list.get(i).get("项目")+"," : "'"+list.get(i).get("项目")+"'"+",") +
-                    (list.get(i).get("一级物业类型")==null ? list.get(i).get("一级物业类型")+"," : "'"+list.get(i).get("一级物业类型")+"'"+",") +
-                    (list.get(i).get("二级物业类型")==null ? list.get(i).get("二级物业类型")+"," : "'"+list.get(i).get("二级物业类型")+"'"+",") +
+                    (list.get(i).get("项目")==null ? "''," : "'"+list.get(i).get("项目")+"'"+",") +
+                    (list.get(i).get("一级物业类型")==null ? "''," : "'"+list.get(i).get("一级物业类型")+"'"+",") +
+                    (list.get(i).get("二级物业类型")==null ? "''," : "'"+list.get(i).get("二级物业类型")+"'"+",") +
                     (list.get(i).get("产品类型code")==null ? "''," : "'"+list.get(i).get("产品类型code")+"'"+",") +
                     list.get(i).get("来访客户")+","+
                     list.get(i).get("来电客户")+","+
@@ -142,10 +142,10 @@ public class UpdateUtil {
                     list.get(i).get("累计成交金额")+","+
                     list.get(i).get("拓展成交户数")+","+
                     list.get(i).get("累计拓展成交户数")+","+
-                    (list.get(i).get("备注")==null ? list.get(i).get("备注")+"," : "'"+list.get(i).get("备注")+"'"+",") +
+                    (list.get(i).get("备注")==null ? "''," : "'"+list.get(i).get("备注")+"'"+",") +
                     (list.get(i).get("项目分期guid")==null ? "''," : "'"+list.get(i).get("项目分期guid")+"'"+",") +
                     (list.get(i).get("项目分期code")==null ? "''," : "'"+list.get(i).get("项目分期code")+"'"+",") +
-                    (list.get(i).get("项目分期")==null ? list.get(i).get("项目分期")+"," : "'"+list.get(i).get("项目分期")+"'"+",") +
+                    (list.get(i).get("项目分期")==null ? "''," : "'"+list.get(i).get("项目分期")+"'"+",") +
                     "'"+thisDay+"'"+
                     ")");
         }
@@ -262,22 +262,22 @@ public class UpdateUtil {
                             "'"+id+"'"+","+
                             (list.get(i).get("集团guid")==null ? "''," : "'"+list.get(i).get("集团guid")+"'"+",") +
                             (list.get(i).get("集团code")==null ? "''," : "'"+list.get(i).get("集团code")+"'"+",") +
-                            (list.get(i).get("集团")==null ? list.get(i).get("集团")+"," : "'"+list.get(i).get("集团")+"'"+",") +
-                            (list.get(i).get("区域公司code")==null ? list.get(i).get("区域公司code")+"," : "'"+list.get(i).get("区域公司code")+"'"+",") +
-                            (regionComName==null ? regionComName+"," : "'"+regionComName+"'"+",") +
+                            (list.get(i).get("集团")==null ? "''," : "'"+list.get(i).get("集团")+"'"+",") +
+                            (list.get(i).get("区域公司code")==null ? "''," : "'"+list.get(i).get("区域公司code")+"'"+",") +
+                            (regionComName==null ? "''," : "'"+regionComName+"'"+",") +
                             (list.get(i).get("项目公司guid")==null ? "''," : "'"+list.get(i).get("项目公司guid")+"'"+",") +
                             (list.get(i).get("项目公司code")==null ? "''," : "'"+list.get(i).get("项目公司code")+"'"+",") +
-                            (list.get(i).get("项目公司")==null ? list.get(i).get("项目公司")+"," : "'"+list.get(i).get("项目公司")+"'"+",") +
+                            (list.get(i).get("项目公司")==null ? "''," : "'"+list.get(i).get("项目公司")+"'"+",") +
                             (list.get(i).get("项目guid")==null ? "''," : "'"+list.get(i).get("项目guid")+"'"+",") +
                             (list.get(i).get("项目code")==null ? "''," : "'"+list.get(i).get("项目code")+"'"+",") +
-                            (list.get(i).get("项目")==null ? list.get(i).get("项目")+"," : "'"+list.get(i).get("项目")+"'"+",") +
+                            (list.get(i).get("项目")==null ? "''," : "'"+list.get(i).get("项目")+"'"+",") +
                             (list.get(i).get("项目分期guid")==null ? "''," : "'"+list.get(i).get("项目分期guid")+"'"+",") +
                             (list.get(i).get("项目分期code")==null ? "''," : "'"+list.get(i).get("项目分期code")+"'"+",") +
-                            (list.get(i).get("项目分期")==null ? list.get(i).get("项目分期")+"," : "'"+list.get(i).get("项目分期")+"'"+",") +
+                            (list.get(i).get("项目分期")==null ? "''," : "'"+list.get(i).get("项目分期")+"'"+",") +
                             (list.get(i).get("ProjCode")==null ? "''," : "'"+list.get(i).get("ProjCode")+"'"+",") +
                             (list.get(i).get("ProductGUID")==null ? "''," : "'"+list.get(i).get("ProductGUID")+"'"+",") +
                             (list.get(i).get("ProductCode")==null ? "''," : "'"+list.get(i).get("ProductCode")+"'"+",") +
-                            (list.get(i).get("ProductName")==null ? list.get(i).get("ProductName")+"," : "'"+list.get(i).get("ProductName")+"'"+",") +
+                            (list.get(i).get("ProductName")==null ? "''," : "'"+list.get(i).get("ProductName")+"'"+",") +
                             list.get(i).get("Level")+","+
                             list.get(i).get("TotalTarget")+","+
                             list.get(i).get("DtTotal")+","+
@@ -530,21 +530,21 @@ public class UpdateUtil {
                     "'" + id + "'" + "," +
                     (list.get(i).get("集团guid") == null ?  "''," : "'" + list.get(i).get("集团guid") + "'" + ",") +
                     (list.get(i).get("集团code") == null ? "''," : "'" + list.get(i).get("集团code") + "'" + ",") +
-                    (list.get(i).get("集团") == null ? list.get(i).get("集团") + "," : "'" + list.get(i).get("集团") + "'" + ",") +
-                    (list.get(i).get("区域公司code") == null ? list.get(i).get("区域公司code") + "," : "'" + list.get(i).get("区域公司code") + "'" + ",") +
-                    (regionComName == null ? regionComName + "," : "'" + regionComName + "'" + ",") +
+                    (list.get(i).get("集团") == null ? "''," : "'" + list.get(i).get("集团") + "'" + ",") +
+                    (list.get(i).get("区域公司code") == null ? "''," : "'" + list.get(i).get("区域公司code") + "'" + ",") +
+                    (regionComName == null ? "''," : "'" + regionComName + "'" + ",") +
                     (list.get(i).get("项目公司guid") == null ?  "''," : "'" + list.get(i).get("项目公司guid") + "'" + ",") +
                     (list.get(i).get("项目公司code") == null ?  "''," : "'" + list.get(i).get("项目公司code") + "'" + ",") +
-                    (list.get(i).get("项目公司") == null ? list.get(i).get("项目公司") + "," : "'" + list.get(i).get("项目公司") + "'" + ",") +
+                    (list.get(i).get("项目公司") == null ? "''," : "'" + list.get(i).get("项目公司") + "'" + ",") +
                     (list.get(i).get("项目guid") == null ?  "''," : "'" + list.get(i).get("项目guid") + "'" + ",") +
                     (list.get(i).get("项目code") == null ?  "''," : "'" + list.get(i).get("项目code") + "'" + ",") +
-                    (list.get(i).get("项目") == null ? list.get(i).get("项目") + "," : "'" + list.get(i).get("项目") + "'" + ",") +
+                    (list.get(i).get("项目") == null ? "''," : "'" + list.get(i).get("项目") + "'" + ",") +
                     (list.get(i).get("项目分期guid") == null ?  "''," : "'" + list.get(i).get("项目分期guid") + "'" + ",") +
                     (list.get(i).get("项目分期code") == null ?  "''," : "'" + list.get(i).get("项目分期code") + "'" + ",") +
-                    (list.get(i).get("项目分期") == null ? list.get(i).get("项目分期") + "," : "'" + list.get(i).get("项目分期") + "'" + ",") +
+                    (list.get(i).get("项目分期") == null ? "''," : "'" + list.get(i).get("项目分期") + "'" + ",") +
                     (list.get(i).get("产品类型code") == null ?  "''," : "'" + list.get(i).get("产品类型code") + "'" + ",") +
-                    (list.get(i).get("一级产品类型") == null ? list.get(i).get("一级产品类型") + "," : "'" + list.get(i).get("一级产品类型") + "'" + ",") +
-                    (list.get(i).get("二级产品类型") == null ? list.get(i).get("二级产品类型") + "," : "'" + list.get(i).get("二级产品类型") + "'" + ",") +
+                    (list.get(i).get("一级产品类型") == null ? "''," : "'" + list.get(i).get("一级产品类型") + "'" + ",") +
+                    (list.get(i).get("二级产品类型") == null ? "''," : "'" + list.get(i).get("二级产品类型") + "'" + ",") +
                     list.get(i).get("xsts") + "," +
                     list.get(i).get("xsmj") + "," +
                     list.get(i).get("xsje") + "," +
@@ -623,15 +623,15 @@ public class UpdateUtil {
                     "'"+id+"'"+","+
                     (list.get(i).get("集团guid")==null ? "''," : "'"+list.get(i).get("集团guid")+"'"+",") +
                     (list.get(i).get("集团code")==null ? "''," : "'"+list.get(i).get("集团code")+"'"+",") +
-                    (list.get(i).get("集团")==null ? list.get(i).get("集团")+"," : "'"+list.get(i).get("集团")+"'"+",") +
-                    (list.get(i).get("区域公司code")==null ? list.get(i).get("区域公司code")+"," : "'"+list.get(i).get("区域公司code")+"'"+",") +
-                    (regionComName==null ? regionComName+"," : "'"+regionComName+"'"+",") +
+                    (list.get(i).get("集团")==null ? "''," : "'"+list.get(i).get("集团")+"'"+",") +
+                    (list.get(i).get("区域公司code")==null ? "''," : "'"+list.get(i).get("区域公司code")+"'"+",") +
+                    (regionComName==null ? "''," : "'"+regionComName+"'"+",") +
                     (list.get(i).get("项目公司guid")==null ? "''," : "'"+list.get(i).get("项目公司guid")+"'"+",") +
                     (list.get(i).get("项目公司code")==null ? "''," : "'"+list.get(i).get("项目公司code")+"'"+",") +
-                    (list.get(i).get("项目公司")==null ? list.get(i).get("项目公司")+"," : "'"+list.get(i).get("项目公司")+"'"+",") +
+                    (list.get(i).get("项目公司")==null ? "''," : "'"+list.get(i).get("项目公司")+"'"+",") +
                     (list.get(i).get("项目guid")==null ? "''," : "'"+list.get(i).get("项目guid")+"'"+",") +
                     (list.get(i).get("项目code")==null ? "''," : "'"+list.get(i).get("项目code")+"'"+",") +
-                    (list.get(i).get("项目")==null ? list.get(i).get("项目")+"," : "'"+list.get(i).get("项目")+"'"+",") +
+                    (list.get(i).get("项目")==null ? "''," : "'"+list.get(i).get("项目")+"'"+",") +
                     "'"+thisDay+"'"+
                     ")");
         }
@@ -699,20 +699,20 @@ public class UpdateUtil {
                     "'"+id+"'"+","+
                     (list.get(i).get("集团guid")==null ? "''," : "'"+list.get(i).get("集团guid")+"'"+",") +
                     (list.get(i).get("集团code")==null ? "''," : "'"+list.get(i).get("集团code")+"'"+",") +
-                    (list.get(i).get("集团")==null ? list.get(i).get("集团")+"," : "'"+list.get(i).get("集团")+"'"+",") +
-                    (list.get(i).get("区域公司code")==null ? list.get(i).get("区域公司code")+"," : "'"+list.get(i).get("区域公司code")+"'"+",") +
-                    (regionComName==null ? regionComName+"," : "'"+regionComName+"'"+",") +
+                    (list.get(i).get("集团")==null ? "''," : "'"+list.get(i).get("集团")+"'"+",") +
+                    (list.get(i).get("区域公司code")==null ? "''," : "'"+list.get(i).get("区域公司code")+"'"+",") +
+                    (regionComName==null ? "''," : "'"+regionComName+"'"+",") +
                     (list.get(i).get("项目公司guid")==null ? "''," : "'"+list.get(i).get("项目公司guid")+"'"+",") +
                     (list.get(i).get("项目公司code")==null ? "''," : "'"+list.get(i).get("项目公司code")+"'"+",") +
                     (list.get(i).get("项目公司")==null ? list.get(i).get("项目公司")+"," : "'"+list.get(i).get("项目公司")+"'"+",") +
                     (list.get(i).get("项目guid")==null ? "''," : "'"+list.get(i).get("项目guid")+"'"+",") +
                     (list.get(i).get("项目code")==null ? "''," : "'"+list.get(i).get("项目code")+"'"+",") +
-                    (list.get(i).get("项目")==null ? list.get(i).get("项目")+"," : "'"+list.get(i).get("项目")+"'"+",") +
-                    (list.get(i).get("项目短名")==null ? list.get(i).get("项目短名")+"," : "'"+list.get(i).get("项目短名")+"'"+",") +
+                    (list.get(i).get("项目")==null ? "''," : "'"+list.get(i).get("项目")+"'"+",") +
+                    (list.get(i).get("项目短名")==null ? "''," : "'"+list.get(i).get("项目短名")+"'"+",") +
                     (list.get(i).get("项目分期guid")==null ? "''," : "'"+list.get(i).get("项目分期guid")+"'"+",") +
                     (list.get(i).get("项目分期code")==null ? "''," : "'"+list.get(i).get("项目分期code")+"'"+",") +
-                    (list.get(i).get("项目分期")==null ? list.get(i).get("项目分期")+"," : "'"+list.get(i).get("项目分期")+"'"+",") +
-                    (list.get(i).get("分期短名")==null ? list.get(i).get("项目")+"," : "'"+list.get(i).get("分期短名")+"'"+",") +
+                    (list.get(i).get("项目分期")==null ? "''," : "'"+list.get(i).get("项目分期")+"'"+",") +
+                    (list.get(i).get("分期短名")==null ? "''," : "'"+list.get(i).get("分期短名")+"'"+",") +
                     "'"+thisDay+"'"+
                     ")");
         }
@@ -772,19 +772,19 @@ public class UpdateUtil {
                     "'" + id + "'" + "," +
                     (list.get(i).get("集团guid") == null ? "''," : "'" + list.get(i).get("集团guid") + "'" + ",") +
                     (list.get(i).get("集团code") == null ? "''," : "'" + list.get(i).get("集团code") + "'" + ",") +
-                    (list.get(i).get("集团") == null ? list.get(i).get("集团") + "," : "'" + list.get(i).get("集团") + "'" + ",") +
-                    (list.get(i).get("区域公司code") == null ? list.get(i).get("区域公司code") + "," : "'" + list.get(i).get("区域公司code") + "'" + ",") +
-                    (regionComName == null ? regionComName + "," : "'" + regionComName + "'" + ",") +
+                    (list.get(i).get("集团") == null ? "''," : "'" + list.get(i).get("集团") + "'" + ",") +
+                    (list.get(i).get("区域公司code") == null ? "''," : "'" + list.get(i).get("区域公司code") + "'" + ",") +
+                    (regionComName == null ? "''," : "'" + regionComName + "'" + ",") +
                     (list.get(i).get("项目公司guid") == null ? "''," : "'" + list.get(i).get("项目公司guid") + "'" + ",") +
                     (list.get(i).get("项目公司code") == null ? "''," : "'" + list.get(i).get("项目公司code") + "'" + ",") +
-                    (list.get(i).get("项目公司") == null ? list.get(i).get("项目公司") + "," : "'" + list.get(i).get("项目公司") + "'" + ",") +
+                    (list.get(i).get("项目公司") == null ? "''," : "'" + list.get(i).get("项目公司") + "'" + ",") +
                     (list.get(i).get("项目guid") == null ? "''," : "'" + list.get(i).get("项目guid") + "'" + ",") +
                     (list.get(i).get("项目code") == null ? "''," : "'" + list.get(i).get("项目code") + "'" + ",") +
-                    (list.get(i).get("项目") == null ? list.get(i).get("项目") + "," : "'" + list.get(i).get("项目") + "'" + ",") +
+                    (list.get(i).get("项目") == null ? "''," : "'" + list.get(i).get("项目") + "'" + ",") +
                     (list.get(i).get("项目分期guid") == null ? "''," : "'" + list.get(i).get("项目分期guid") + "'" + ",") +
                     (list.get(i).get("项目分期code") == null ? "''," : "'" + list.get(i).get("项目分期code") + "'" + ",") +
-                    (list.get(i).get("项目分期") == null ? list.get(i).get("项目分期") + "," : "'" + list.get(i).get("项目分期") + "'" + ",") +
-                    (list.get(i).get("一级产品类型") == null ? list.get(i).get("一级产品类型") + "," : "'" + list.get(i).get("一级产品类型") + "'" + ",") +
+                    (list.get(i).get("项目分期") == null ? "''," : "'" + list.get(i).get("项目分期") + "'" + ",") +
+                    (list.get(i).get("一级产品类型") == null ? "''," : "'" + list.get(i).get("一级产品类型") + "'" + ",") +
                     list.get(i).get("年初") + "," +
                     list.get(i).get("年初面积") + "," +
                     list.get(i).get("本月增减") + "," +
@@ -1044,58 +1044,58 @@ public class UpdateUtil {
                     "'"+id+"'"+","+
                     (list.get(i).get("集团guid")==null ? "''," : "'"+list.get(i).get("集团guid")+"'"+",") +
                     (list.get(i).get("集团code")==null ? "''," : "'"+list.get(i).get("集团code")+"'"+",") +
-                    (list.get(i).get("集团")==null ? list.get(i).get("集团")+"," : "'"+list.get(i).get("集团")+"'"+",") +
-                    (list.get(i).get("区域公司code")==null ? list.get(i).get("区域公司code")+"," : "'"+list.get(i).get("区域公司code")+"'"+",") +
-                    (regionComName==null ? regionComName+"," : "'"+regionComName+"'"+",") +
+                    (list.get(i).get("集团")==null ? "''," : "'"+list.get(i).get("集团")+"'"+",") +
+                    (list.get(i).get("区域公司code")==null ? "''," : "'"+list.get(i).get("区域公司code")+"'"+",") +
+                    (regionComName==null ? "''," : "'"+regionComName+"'"+",") +
                     (list.get(i).get("项目公司guid")==null ? "''," : "'"+list.get(i).get("项目公司guid")+"'"+",") +
                     (list.get(i).get("项目公司code")==null ? "''," : "'"+list.get(i).get("项目公司code")+"'"+",") +
                     (list.get(i).get("项目公司")==null ? list.get(i).get("项目公司")+"," : "'"+list.get(i).get("项目公司")+"'"+",") +
                     (list.get(i).get("项目guid")==null ? "''," : "'"+list.get(i).get("项目guid")+"'"+",") +
                     (list.get(i).get("项目code")==null ? "''," : "'"+list.get(i).get("项目code")+"'"+",") +
-                    (list.get(i).get("项目")==null ? list.get(i).get("项目")+"," : "'"+list.get(i).get("项目")+"'"+",") +
+                    (list.get(i).get("项目")==null ? "''," : "'"+list.get(i).get("项目")+"'"+",") +
                     (list.get(i).get("项目分期guid")==null ? "''," : "'"+list.get(i).get("项目分期guid")+"'"+",") +
                     (list.get(i).get("项目分期code")==null ? "''," : "'"+list.get(i).get("项目分期code")+"'"+",") +
-                    (list.get(i).get("项目分期")==null ? list.get(i).get("项目分期")+"," : "'"+list.get(i).get("项目分期")+"'"+",") +
-                    (list.get(i).get("项目代码")==null ? list.get(i).get("项目代码")+"," : "'"+list.get(i).get("项目代码")+"'"+",") +
-                    (list.get(i).get("父级代码")==null ? list.get(i).get("父级代码")+"," : "'"+list.get(i).get("父级代码")+"'"+",") +
-                    (list.get(i).get("项目简称")==null ? list.get(i).get("项目简称")+"," : "'"+list.get(i).get("项目简称")+"'"+",") +
+                    (list.get(i).get("项目分期")==null ? "''," : "'"+list.get(i).get("项目分期")+"'"+",") +
+                    (list.get(i).get("项目代码")==null ? "''," : "'"+list.get(i).get("项目代码")+"'"+",") +
+                    (list.get(i).get("父级代码")==null ? "''," : "'"+list.get(i).get("父级代码")+"'"+",") +
+                    (list.get(i).get("项目简称")==null ? "''," : "'"+list.get(i).get("项目简称")+"'"+",") +
                     list.get(i).get("是否公建项目")+","+
                     list.get(i).get("项目级数")+","+
                     list.get(i).get("是否最末级项目")+","+
-                    (list.get(i).get("项目负责人ID")==null ? list.get(i).get("项目负责人ID")+"," : "'"+list.get(i).get("项目负责人ID")+"'"+",") +
-                    (list.get(i).get("项目所属区域GUID")==null ? list.get(i).get("项目所属区域GUID")+"," : "'"+list.get(i).get("项目所属区域GUID")+"'"+",") +
-                    (list.get(i).get("项目所属区域")==null ? list.get(i).get("项目所属区域")+"," : "'"+list.get(i).get("项目所属区域")+"'"+",") +
-                    (list.get(i).get("开盘日期-计划")==null ? list.get(i).get("开盘日期-计划")+"," : "'"+list.get(i).get("开盘日期-计划")+"'"+",") +
-                    (list.get(i).get("交付日期-计划")==null ? list.get(i).get("交付日期-计划")+"," : "'"+list.get(i).get("交付日期-计划")+"'"+",") +
-                    (list.get(i).get("开工日期-计划")==null ? list.get(i).get("开工日期-计划")+"," : "'"+list.get(i).get("开工日期-计划")+"'"+",") +
-                    (list.get(i).get("竣工日期-计划")==null ? list.get(i).get("竣工日期-计划")+"," : "'"+list.get(i).get("竣工日期-计划")+"'"+",") +
-                    (list.get(i).get("开盘日期-实际")==null ? list.get(i).get("开盘日期-实际")+"," : "'"+list.get(i).get("开盘日期-实际")+"'"+",") +
-                    (list.get(i).get("交付日期-实际")==null ? list.get(i).get("交付日期-实际")+"," : "'"+list.get(i).get("交付日期-实际")+"'"+",") +
-                    (list.get(i).get("开工日期-实际")==null ? list.get(i).get("开工日期-实际")+"," : "'"+list.get(i).get("开工日期-实际")+"'"+",") +
-                    (list.get(i).get("竣工日期-实际")==null ? list.get(i).get("竣工日期-实际")+"," : "'"+list.get(i).get("竣工日期-实际")+"'"+",") +
-                    (list.get(i).get("项目状态")==null ? list.get(i).get("项目状态")+"," : "'"+list.get(i).get("项目状态")+"'"+",") +
-                    (list.get(i).get("项目描述")==null ? list.get(i).get("项目描述")+"," : "'"+list.get(i).get("项目描述")+"'"+",") +
+                    (list.get(i).get("项目负责人ID")==null ? "''," : "'"+list.get(i).get("项目负责人ID")+"'"+",") +
+                    (list.get(i).get("项目所属区域GUID")==null ? "''," : "'"+list.get(i).get("项目所属区域GUID")+"'"+",") +
+                    (list.get(i).get("项目所属区域")==null ? "''," : "'"+list.get(i).get("项目所属区域")+"'"+",") +
+                    (list.get(i).get("开盘日期-计划")==null ? "''," : "'"+list.get(i).get("开盘日期-计划")+"'"+",") +
+                    (list.get(i).get("交付日期-计划")==null ? "''," : "'"+list.get(i).get("交付日期-计划")+"'"+",") +
+                    (list.get(i).get("开工日期-计划")==null ? "''," : "'"+list.get(i).get("开工日期-计划")+"'"+",") +
+                    (list.get(i).get("竣工日期-计划")==null ? "''," : "'"+list.get(i).get("竣工日期-计划")+"'"+",") +
+                    (list.get(i).get("开盘日期-实际")==null ? "''," : "'"+list.get(i).get("开盘日期-实际")+"'"+",") +
+                    (list.get(i).get("交付日期-实际")==null ? "''," : "'"+list.get(i).get("交付日期-实际")+"'"+",") +
+                    (list.get(i).get("开工日期-实际")==null ? "''," : "'"+list.get(i).get("开工日期-实际")+"'"+",") +
+                    (list.get(i).get("竣工日期-实际")==null ? "''," : "'"+list.get(i).get("竣工日期-实际")+"'"+",") +
+                    (list.get(i).get("项目状态")==null ? "''," : "'"+list.get(i).get("项目状态")+"'"+",") +
+                    (list.get(i).get("项目描述")==null ? "''," : "'"+list.get(i).get("项目描述")+"'"+",") +
                     list.get(i).get("占地面积")+","+
                     list.get(i).get("套内面积")+","+
                     list.get(i).get("可售套数")+","+
                     list.get(i).get("可售单价")+","+
                     list.get(i).get("可售金额")+","+
                     list.get(i).get("建筑密度")+","+
-                    (list.get(i).get("项目地址")==null ? list.get(i).get("项目地址")+"," : "'"+list.get(i).get("项目地址")+"'"+",") +
-                    (list.get(i).get("ParentName")==null ? list.get(i).get("ParentName")+"," : "'"+list.get(i).get("ParentName")+"'"+",") +
-                    (list.get(i).get("项目开始日期")==null ? list.get(i).get("项目开始日期")+"," : "'"+list.get(i).get("项目开始日期")+"'"+",") +
-                    (list.get(i).get("项目截止日期")==null ? list.get(i).get("项目截止日期")+"," : "'"+list.get(i).get("项目截止日期")+"'"+",") +
-                    (list.get(i).get("应用子系统")==null ? list.get(i).get("应用子系统")+"," : "'"+list.get(i).get("应用子系统")+"'"+",") +
-                    (list.get(i).get("审批状态")==null ? list.get(i).get("审批状态")+"," : "'"+list.get(i).get("审批状态")+"'"+",") +
-                    (list.get(i).get("归档状态")==null ? list.get(i).get("归档状态")+"," : "'"+list.get(i).get("归档状态")+"'"+",") +
-                    (list.get(i).get("项目总图预算版")==null ? list.get(i).get("项目总图预算版")+"," : "'"+list.get(i).get("项目总图预算版")+"'"+",") +
-                    (list.get(i).get("项目总图调整版")==null ? list.get(i).get("项目总图调整版")+"," : "'"+list.get(i).get("项目总图调整版")+"'"+",") +
-                    (list.get(i).get("项目负责人")==null ? list.get(i).get("项目负责人")+"," : "'"+list.get(i).get("项目负责人")+"'"+",") +
-                    (list.get(i).get("usuallyCode")==null ? list.get(i).get("usuallyCode")+"," : "'"+list.get(i).get("usuallyCode")+"'"+",") +
-                    (list.get(i).get("地块名称")==null ? list.get(i).get("地块名称")+"," : "'"+list.get(i).get("地块名称")+"'"+",") +
-                    (list.get(i).get("项目推广名")==null ? list.get(i).get("项目推广名")+"," : "'"+list.get(i).get("项目推广名")+"'"+",") +
-                    (list.get(i).get("项目曾用名")==null ? list.get(i).get("项目曾用名")+"," : "'"+list.get(i).get("项目曾用名")+"'"+",") +
-                    (list.get(i).get("目标客户肖像")==null ? list.get(i).get("目标客户肖像")+"," : "'"+list.get(i).get("目标客户肖像")+"'"+",") +
+                    (list.get(i).get("项目地址")==null ? "''," : "'"+list.get(i).get("项目地址")+"'"+",") +
+                    (list.get(i).get("ParentName")==null ? "''," : "'"+list.get(i).get("ParentName")+"'"+",") +
+                    (list.get(i).get("项目开始日期")==null ? "''," : "'"+list.get(i).get("项目开始日期")+"'"+",") +
+                    (list.get(i).get("项目截止日期")==null ? "''," : "'"+list.get(i).get("项目截止日期")+"'"+",") +
+                    (list.get(i).get("应用子系统")==null ? "''," : "'"+list.get(i).get("应用子系统")+"'"+",") +
+                    (list.get(i).get("审批状态")==null ? "''," : "'"+list.get(i).get("审批状态")+"'"+",") +
+                    (list.get(i).get("归档状态")==null ? "''," : "'"+list.get(i).get("归档状态")+"'"+",") +
+                    (list.get(i).get("项目总图预算版")==null ? "''," : "'"+list.get(i).get("项目总图预算版")+"'"+",") +
+                    (list.get(i).get("项目总图调整版")==null ? "''," : "'"+list.get(i).get("项目总图调整版")+"'"+",") +
+                    (list.get(i).get("项目负责人")==null ? "''," : "'"+list.get(i).get("项目负责人")+"'"+",") +
+                    (list.get(i).get("usuallyCode")==null ? "''," : "'"+list.get(i).get("usuallyCode")+"'"+",") +
+                    (list.get(i).get("地块名称")==null ? "''," : "'"+list.get(i).get("地块名称")+"'"+",") +
+                    (list.get(i).get("项目推广名")==null ? "''," : "'"+list.get(i).get("项目推广名")+"'"+",") +
+                    (list.get(i).get("项目曾用名")==null ? "''," : "'"+list.get(i).get("项目曾用名")+"'"+",") +
+                    (list.get(i).get("目标客户肖像")==null ? "''," : "'"+list.get(i).get("目标客户肖像")+"'"+",") +
                     list.get(i).get("总用地面积")+","+
                     list.get(i).get("建设用地面积")+","+
                     list.get(i).get("道路面积")+","+
@@ -1136,12 +1136,12 @@ public class UpdateUtil {
                     list.get(i).get("挖方工程量")+","+
                     list.get(i).get("填方工程量")+","+
                     list.get(i).get("外运工程量")+","+
-                    (list.get(i).get("项目规划指标GUID")==null ? list.get(i).get("项目规划指标GUID")+"," : "'"+list.get(i).get("项目规划指标GUID")+"'"+",") +
+                    (list.get(i).get("项目规划指标GUID")==null ? "''," : "'"+list.get(i).get("项目规划指标GUID")+"'"+",") +
                     list.get(i).get("权益比例")+","+
-                    (list.get(i).get("地块名称GUID")==null ? list.get(i).get("地块名称GUID")+"," : "'"+list.get(i).get("地块名称GUID")+"'"+",") +
-                    (list.get(i).get("层级代码")==null ? list.get(i).get("层级代码")+"," : "'"+list.get(i).get("层级代码")+"'"+",") +
-                    (list.get(i).get("版本GUID")==null ? list.get(i).get("版本GUID")+"," : "'"+list.get(i).get("版本GUID")+"'"+",") +
-                    (list.get(i).get("版本名称")==null ? list.get(i).get("版本名称")+"," : "'"+list.get(i).get("版本名称")+"'"+",") +
+                    (list.get(i).get("地块名称GUID")==null ? "''," : "'"+list.get(i).get("地块名称GUID")+"'"+",") +
+                    (list.get(i).get("层级代码")==null ? "''," : "'"+list.get(i).get("层级代码")+"'"+",") +
+                    (list.get(i).get("版本GUID")==null ? "''," : "'"+list.get(i).get("版本GUID")+"'"+",") +
+                    (list.get(i).get("版本名称")==null ? "''," : "'"+list.get(i).get("版本名称")+"'"+",") +
                     "'"+thisDay+"'"+
                     ")");
         }
@@ -1236,18 +1236,18 @@ public class UpdateUtil {
                     "'"+id+"'"+","+
                     (list.get(i).get("集团guid")==null ? "''," : "'"+list.get(i).get("集团guid")+"'"+",") +
                     (list.get(i).get("集团code")==null ? "''," : "'"+list.get(i).get("集团code")+"'"+",") +
-                    (list.get(i).get("集团")==null ? list.get(i).get("集团")+"," : "'"+list.get(i).get("集团")+"'"+",") +
-                    (list.get(i).get("区域公司code")==null ? list.get(i).get("区域公司code")+"," : "'"+list.get(i).get("区域公司code")+"'"+",") +
-                    (regionComName==null ? regionComName+"," : "'"+regionComName+"'"+",") +
+                    (list.get(i).get("集团")==null ? "''," : "'"+list.get(i).get("集团")+"'"+",") +
+                    (list.get(i).get("区域公司code")==null ? "''," : "'"+list.get(i).get("区域公司code")+"'"+",") +
+                    (regionComName==null ? "''," : "'"+regionComName+"'"+",") +
                     (list.get(i).get("项目公司guid")==null ? "''," : "'"+list.get(i).get("项目公司guid")+"'"+",") +
                     (list.get(i).get("项目公司code")==null ? "''," : "'"+list.get(i).get("项目公司code")+"'"+",") +
-                    (list.get(i).get("项目公司")==null ? list.get(i).get("项目公司")+"," : "'"+list.get(i).get("项目公司")+"'"+",") +
+                    (list.get(i).get("项目公司")==null ? "''," : "'"+list.get(i).get("项目公司")+"'"+",") +
                     (list.get(i).get("项目guid")==null ? "''," : "'"+list.get(i).get("项目guid")+"'"+",") +
                     (list.get(i).get("项目code")==null ? "''," : "'"+list.get(i).get("项目code")+"'"+",") +
-                    (list.get(i).get("项目")==null ? list.get(i).get("项目")+"," : "'"+list.get(i).get("项目")+"'"+",") +
+                    (list.get(i).get("项目")==null ? "''," : "'"+list.get(i).get("项目")+"'"+",") +
                     (list.get(i).get("产品类型guid")==null ? "''," : "'"+list.get(i).get("产品类型guid")+"'"+",") +
-                    (list.get(i).get("一级产品类型")==null ? list.get(i).get("一级产品类型")+"," : "'"+list.get(i).get("一级产品类型")+"'"+",") +
-                    (list.get(i).get("二级产品类型")==null ? list.get(i).get("二级产品类型")+"," : "'"+list.get(i).get("二级产品类型")+"'"+",") +
+                    (list.get(i).get("一级产品类型")==null ? "''," : "'"+list.get(i).get("一级产品类型")+"'"+",") +
+                    (list.get(i).get("二级产品类型")==null ? "''," : "'"+list.get(i).get("二级产品类型")+"'"+",") +
                     (list.get(i).get("BProductTypeCode")==null ? "''," : "'"+list.get(i).get("BProductTypeCode")+"'"+",") +
                     list.get(i).get("本月计划销售面积")+","+
                     list.get(i).get("本月计划销售金额")+","+
@@ -1282,10 +1282,10 @@ public class UpdateUtil {
                     list.get(i).get("已定未签套数")+","+
                     list.get(i).get("已定未签额")+","+
                     list.get(i).get("平均单价")+","+
-                    (list.get(i).get("备注")==null ? list.get(i).get("备注")+"," : "'"+list.get(i).get("备注")+"'"+",") +
+                    (list.get(i).get("备注")==null ? "''," : "'"+list.get(i).get("备注")+"'"+",") +
                     (list.get(i).get("项目分期guid")==null ? "''," : "'"+list.get(i).get("项目分期guid")+"'"+",") +
                     (list.get(i).get("项目分期code")==null ? "''," : "'"+list.get(i).get("项目分期code")+"'"+",") +
-                    (list.get(i).get("项目分期")==null ? list.get(i).get("项目分期")+"," : "'"+list.get(i).get("项目分期")+"'"+",") +
+                    (list.get(i).get("项目分期")==null ? "''," : "'"+list.get(i).get("项目分期")+"'"+",") +
                     list.get(i).get("本年所有计划金额")+","+
                     list.get(i).get("本年所有计划面积")+","+
                     list.get(i).get("本日实际销售面积")+","+
@@ -1436,21 +1436,21 @@ public class UpdateUtil {
                     "'"+id+"'"+","+
                     (list.get(i).get("集团guid")==null ? "''," : "'"+list.get(i).get("集团guid")+"'"+",") +
                     (list.get(i).get("集团code")==null ? "''," : "'"+list.get(i).get("集团code")+"'"+",") +
-                    (list.get(i).get("集团")==null ? list.get(i).get("集团")+"," : "'"+list.get(i).get("集团")+"'"+",") +
-                    (list.get(i).get("区域公司code")==null ? list.get(i).get("区域公司code")+"," : "'"+list.get(i).get("区域公司code")+"'"+",") +
-                    (regionComName==null ? regionComName+"," : "'"+regionComName+"'"+",") +
+                    (list.get(i).get("集团")==null ? "''," : "'"+list.get(i).get("集团")+"'"+",") +
+                    (list.get(i).get("区域公司code")==null ? "''," : "'"+list.get(i).get("区域公司code")+"'"+",") +
+                    (regionComName==null ? "''," : "'"+regionComName+"'"+",") +
                     (list.get(i).get("项目公司guid")==null ? "''," : "'"+list.get(i).get("项目公司guid")+"'"+",") +
                     (list.get(i).get("项目公司code")==null ? "''," : "'"+list.get(i).get("项目公司code")+"'"+",") +
-                    (list.get(i).get("项目公司")==null ? list.get(i).get("项目公司")+"," : "'"+list.get(i).get("项目公司")+"'"+",") +
+                    (list.get(i).get("项目公司")==null ? "''," : "'"+list.get(i).get("项目公司")+"'"+",") +
                     (list.get(i).get("项目guid")==null ? "''," : "'"+list.get(i).get("项目guid")+"'"+",") +
                     (list.get(i).get("项目code")==null ? "''," : "'"+list.get(i).get("项目code")+"'"+",") +
-                    (list.get(i).get("项目")==null ? list.get(i).get("项目")+"," : "'"+list.get(i).get("项目")+"'"+",") +
+                    (list.get(i).get("项目")==null ? "''," : "'"+list.get(i).get("项目")+"'"+",") +
                     (list.get(i).get("项目分期guid")==null ? "''," : "'"+list.get(i).get("项目分期guid")+"'"+",") +
                     (list.get(i).get("项目分期code")==null ? "''," : "'"+list.get(i).get("项目分期code")+"'"+",") +
-                    (list.get(i).get("项目分期")==null ? list.get(i).get("项目分期")+"," : "'"+list.get(i).get("项目分期")+"'"+",") +
+                    (list.get(i).get("项目分期")==null ? "''," : "'"+list.get(i).get("项目分期")+"'"+",") +
                     (list.get(i).get("产品类型code")==null ? "''," : "'"+list.get(i).get("产品类型code")+"'"+",") +
-                    (list.get(i).get("一级产品类型")==null ? list.get(i).get("一级产品类型")+"," : "'"+list.get(i).get("一级产品类型")+"'"+",") +
-                    (list.get(i).get("二级产品类型")==null ? list.get(i).get("二级产品类型")+"," : "'"+list.get(i).get("二级产品类型")+"'"+",") +
+                    (list.get(i).get("一级产品类型")==null ? "''," : "'"+list.get(i).get("一级产品类型")+"'"+",") +
+                    (list.get(i).get("二级产品类型")==null ? "''," : "'"+list.get(i).get("二级产品类型")+"'"+",") +
                     list.get(i).get("年初库存去化金额")+","+
                     list.get(i).get("新增库存去化金额")+","+
                     list.get(i).get("库存剩余金额")+","+
