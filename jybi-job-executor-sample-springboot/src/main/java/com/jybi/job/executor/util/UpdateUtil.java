@@ -1065,14 +1065,14 @@ public class UpdateUtil {
                     (list.get(i).get("项目负责人ID")==null ? "''," : "'"+list.get(i).get("项目负责人ID")+"'"+",") +
                     (list.get(i).get("项目所属区域GUID")==null ? "''," : "'"+list.get(i).get("项目所属区域GUID")+"'"+",") +
                     (list.get(i).get("项目所属区域")==null ? "''," : "'"+list.get(i).get("项目所属区域")+"'"+",") +
-                    (list.get(i).get("开盘日期-计划")==null ? "''," : "'"+list.get(i).get("开盘日期-计划")+"'"+",") +
-                    (list.get(i).get("交付日期-计划")==null ? "''," : "'"+list.get(i).get("交付日期-计划")+"'"+",") +
-                    (list.get(i).get("开工日期-计划")==null ? "''," : "'"+list.get(i).get("开工日期-计划")+"'"+",") +
-                    (list.get(i).get("竣工日期-计划")==null ? "''," : "'"+list.get(i).get("竣工日期-计划")+"'"+",") +
-                    (list.get(i).get("开盘日期-实际")==null ? "''," : "'"+list.get(i).get("开盘日期-实际")+"'"+",") +
-                    (list.get(i).get("交付日期-实际")==null ? "''," : "'"+list.get(i).get("交付日期-实际")+"'"+",") +
-                    (list.get(i).get("开工日期-实际")==null ? "''," : "'"+list.get(i).get("开工日期-实际")+"'"+",") +
-                    (list.get(i).get("竣工日期-实际")==null ? "''," : "'"+list.get(i).get("竣工日期-实际")+"'"+",") +
+                    (list.get(i).get("开盘日期-计划")==null ? null+"," : "'"+list.get(i).get("开盘日期-计划")+"'"+",") +
+                    (list.get(i).get("交付日期-计划")==null ? null+"," : "'"+list.get(i).get("交付日期-计划")+"'"+",") +
+                    (list.get(i).get("开工日期-计划")==null ? null+"," : "'"+list.get(i).get("开工日期-计划")+"'"+",") +
+                    (list.get(i).get("竣工日期-计划")==null ? null+"," : "'"+list.get(i).get("竣工日期-计划")+"'"+",") +
+                    (list.get(i).get("开盘日期-实际")==null ? null+"," : "'"+list.get(i).get("开盘日期-实际")+"'"+",") +
+                    (list.get(i).get("交付日期-实际")==null ? null+"," : "'"+list.get(i).get("交付日期-实际")+"'"+",") +
+                    (list.get(i).get("开工日期-实际")==null ? null+"," : "'"+list.get(i).get("开工日期-实际")+"'"+",") +
+                    (list.get(i).get("竣工日期-实际")==null ? null+"," : "'"+list.get(i).get("竣工日期-实际")+"'"+",") +
                     (list.get(i).get("项目状态")==null ? "''," : "'"+list.get(i).get("项目状态")+"'"+",") +
                     (list.get(i).get("项目描述")==null ? "''," : "'"+list.get(i).get("项目描述")+"'"+",") +
                     list.get(i).get("占地面积")+","+
@@ -1083,8 +1083,8 @@ public class UpdateUtil {
                     list.get(i).get("建筑密度")+","+
                     (list.get(i).get("项目地址")==null ? "''," : "'"+list.get(i).get("项目地址")+"'"+",") +
                     (list.get(i).get("ParentName")==null ? "''," : "'"+list.get(i).get("ParentName")+"'"+",") +
-                    (list.get(i).get("项目开始日期")==null ? "''," : "'"+list.get(i).get("项目开始日期")+"'"+",") +
-                    (list.get(i).get("项目截止日期")==null ? "''," : "'"+list.get(i).get("项目截止日期")+"'"+",") +
+                    (list.get(i).get("项目开始日期")==null ? null+"," : "'"+list.get(i).get("项目开始日期")+"'"+",") +
+                    (list.get(i).get("项目截止日期")==null ? null+"," : "'"+list.get(i).get("项目截止日期")+"'"+",") +
                     (list.get(i).get("应用子系统")==null ? "''," : "'"+list.get(i).get("应用子系统")+"'"+",") +
                     (list.get(i).get("审批状态")==null ? "''," : "'"+list.get(i).get("审批状态")+"'"+",") +
                     (list.get(i).get("归档状态")==null ? "''," : "'"+list.get(i).get("归档状态")+"'"+",") +
