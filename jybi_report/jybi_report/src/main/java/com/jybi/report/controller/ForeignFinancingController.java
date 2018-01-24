@@ -2,6 +2,7 @@ package com.jybi.report.controller;
 
 import com.jybi.report.model.ForeignFinancing;
 import com.jybi.report.model.ReportMap;
+import com.jybi.report.model.ReportReturnT;
 import com.jybi.report.model.ReturnT;
 import com.jybi.report.services.JybiReportForeignFinancingSerivce;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,85 +57,92 @@ public class ForeignFinancingController {
      * */
     @RequestMapping(value ="/queryAll",method = RequestMethod.GET)
     @ResponseBody
-    public ReturnT<List<Map<String,Object>>> queryAll(){
-        List<Map<String,Object>> returnTemp = new ArrayList<Map<String,Object>>();
-        Integer index = 1;
+    public ReportReturnT<List<ForeignFinancing>> queryAll(){
 
-        List<ForeignFinancing> list = jybiReportForeignFinancingSerivce.queryAll();
-        Map<String,String> orgMap = new HashMap<String,String>();
-        //获取数据里所有集团
-        for(int i=0;i<list.size();i++){
-            String temp = (String)orgMap.get(list.get(i).getOrgName());
-            if(temp == null){
-                orgMap.put(list.get(i).getOrgName(),list.get(i).getOrgName());
-            }
-        }
-        for(String key : orgMap.keySet()) {
-//            List<ReportMap<List<ReportMap<List<ReportMap<List<ForeignFinancing>>>>>>> reportTemp = new ArrayList<ReportMap<List<ReportMap<List<ReportMap<List<ForeignFinancing>>>>>>>();
-            Map<String,Object> reportTemp = new HashMap<String,Object>();
-            ReportMap<List<ReportMap<List<ReportMap<List<ForeignFinancing>>>>>> tempMap = new ReportMap<List<ReportMap<List<ReportMap<List<ForeignFinancing>>>>>>();
-            tempMap.setObjName(key);
-            Integer orgLength = 0;
-            List<ReportMap<List<ReportMap<List<ForeignFinancing>>>>> typeReturnMap = new ArrayList<ReportMap<List<ReportMap<List<ForeignFinancing>>>>>();
-            //获取同集团下所有的类型
-            Map<String,String> typeMap = new HashMap<String,String>();
-            for(int i=0;i<list.size();i++){
-                if(key.equals(list.get(i).getOrgName())){
-                    String temp = (String)typeMap.get(list.get(i).getType());
-                    if(temp == null){
-                        typeMap.put(list.get(i).getType(),list.get(i).getType());
-                    }
-                }
-            }
-            for(String typeKey:typeMap.keySet()){
-                ReportMap<List<ReportMap<List<ForeignFinancing>>>> typeReportMap = new ReportMap<List<ReportMap<List<ForeignFinancing>>>>();
-                typeReportMap.setObjName(typeKey);
-                List<ReportMap<List<ForeignFinancing>>> comReturnMap = new ArrayList<ReportMap<List<ForeignFinancing>>>();
-                Integer typeLength = 0;
-                //获取同集团同类型下所有区域公司
-                Map<String,String> comMap = new HashMap<String,String>();
-                for(int i=0;i<list.size();i++){
-                    if(key.equals(list.get(i).getOrgName())){
-                        if(typeKey.equals(list.get(i).getType())){
-                            String temp = (String)comMap.get(list.get(i).getRegionComName());
-                            if(temp == null){
-                                comMap.put(list.get(i).getRegionComName(),list.get(i).getRegionComName());
-                            }
-                        }
-                    }
-                }
-                for(String comKey:comMap.keySet()){
-                    ReportMap<List<ForeignFinancing>> comReportMap = new ReportMap<List<ForeignFinancing>>();
-                    comReportMap.setObjName(comKey);
-                    List<ForeignFinancing> comList = new ArrayList<ForeignFinancing>();
-                    for(int i=0;i<list.size();i++){
-                        if(key.equals(list.get(i).getOrgName())){
-                            if(typeKey.equals(list.get(i).getType())){
-                                if(comKey.equals(list.get(i).getRegionComName())){
-                                    comList.add(list.get(i));
-                                }
-                            }
-                        }
-                    }
-                    comReportMap.setSize(comList.size());
-                    comReportMap.setObjNextTemp(comList);
-                    comReturnMap.add(comReportMap);
-                    typeLength+=comList.size();
-                }
-                typeReportMap.setSize(typeLength);
-                typeReportMap.setObjNextTemp(comReturnMap);
-                typeReturnMap.add(typeReportMap);
-                orgLength+=typeLength;
-            }
-            tempMap.setSize(orgLength);
-            tempMap.setObjNextTemp(typeReturnMap);
-            reportTemp.put("index",index);
-            reportTemp.put("arr",tempMap);
-            returnTemp.add(reportTemp);
-            index++;
-        }
-        return new ReturnT<List<Map<String,Object>>>(returnTemp);
 
+          return null;
+
+
+          //版本1.2
+//        List<Map<String,Object>> returnTemp = new ArrayList<Map<String,Object>>();
+//        Integer index = 1;
+//
+//        List<ForeignFinancing> list = jybiReportForeignFinancingSerivce.queryAll();
+//        Map<String,String> orgMap = new HashMap<String,String>();
+//        //获取数据里所有集团
+//        for(int i=0;i<list.size();i++){
+//            String temp = (String)orgMap.get(list.get(i).getOrgName());
+//            if(temp == null){
+//                orgMap.put(list.get(i).getOrgName(),list.get(i).getOrgName());
+//            }
+//        }
+//        for(String key : orgMap.keySet()) {
+////            List<ReportMap<List<ReportMap<List<ReportMap<List<ForeignFinancing>>>>>>> reportTemp = new ArrayList<ReportMap<List<ReportMap<List<ReportMap<List<ForeignFinancing>>>>>>>();
+//            Map<String,Object> reportTemp = new HashMap<String,Object>();
+//            ReportMap<List<ReportMap<List<ReportMap<List<ForeignFinancing>>>>>> tempMap = new ReportMap<List<ReportMap<List<ReportMap<List<ForeignFinancing>>>>>>();
+//            tempMap.setObjName(key);
+//            Integer orgLength = 0;
+//            List<ReportMap<List<ReportMap<List<ForeignFinancing>>>>> typeReturnMap = new ArrayList<ReportMap<List<ReportMap<List<ForeignFinancing>>>>>();
+//            //获取同集团下所有的类型
+//            Map<String,String> typeMap = new HashMap<String,String>();
+//            for(int i=0;i<list.size();i++){
+//                if(key.equals(list.get(i).getOrgName())){
+//                    String temp = (String)typeMap.get(list.get(i).getType());
+//                    if(temp == null){
+//                        typeMap.put(list.get(i).getType(),list.get(i).getType());
+//                    }
+//                }
+//            }
+//            for(String typeKey:typeMap.keySet()){
+//                ReportMap<List<ReportMap<List<ForeignFinancing>>>> typeReportMap = new ReportMap<List<ReportMap<List<ForeignFinancing>>>>();
+//                typeReportMap.setObjName(typeKey);
+//                List<ReportMap<List<ForeignFinancing>>> comReturnMap = new ArrayList<ReportMap<List<ForeignFinancing>>>();
+//                Integer typeLength = 0;
+//                //获取同集团同类型下所有区域公司
+//                Map<String,String> comMap = new HashMap<String,String>();
+//                for(int i=0;i<list.size();i++){
+//                    if(key.equals(list.get(i).getOrgName())){
+//                        if(typeKey.equals(list.get(i).getType())){
+//                            String temp = (String)comMap.get(list.get(i).getRegionComName());
+//                            if(temp == null){
+//                                comMap.put(list.get(i).getRegionComName(),list.get(i).getRegionComName());
+//                            }
+//                        }
+//                    }
+//                }
+//                for(String comKey:comMap.keySet()){
+//                    ReportMap<List<ForeignFinancing>> comReportMap = new ReportMap<List<ForeignFinancing>>();
+//                    comReportMap.setObjName(comKey);
+//                    List<ForeignFinancing> comList = new ArrayList<ForeignFinancing>();
+//                    for(int i=0;i<list.size();i++){
+//                        if(key.equals(list.get(i).getOrgName())){
+//                            if(typeKey.equals(list.get(i).getType())){
+//                                if(comKey.equals(list.get(i).getRegionComName())){
+//                                    comList.add(list.get(i));
+//                                }
+//                            }
+//                        }
+//                    }
+//                    comReportMap.setSize(comList.size());
+//                    comReportMap.setObjNextTemp(comList);
+//                    comReturnMap.add(comReportMap);
+//                    typeLength+=comList.size();
+//                }
+//                typeReportMap.setSize(typeLength);
+//                typeReportMap.setObjNextTemp(comReturnMap);
+//                typeReturnMap.add(typeReportMap);
+//                orgLength+=typeLength;
+//            }
+//            tempMap.setSize(orgLength);
+//            tempMap.setObjNextTemp(typeReturnMap);
+//            reportTemp.put("index",index);
+//            reportTemp.put("arr",tempMap);
+//            returnTemp.add(reportTemp);
+//            index++;
+//        }
+//        return new ReturnT<List<Map<String,Object>>>(returnTemp);
+
+          //版本1.1
 //        Map<String,Map<String,List<ForeignFinancing>>> returnTemp = new HashMap<String,Map<String,List<ForeignFinancing>>>();
 //        for(int i=0;i<list.size();i++){
 //            Map<String,List<ForeignFinancing>> temp = (Map<String,List<ForeignFinancing>>)returnTemp.get(list.get(i).getOrgName());
