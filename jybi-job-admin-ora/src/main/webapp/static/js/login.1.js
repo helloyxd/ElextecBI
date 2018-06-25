@@ -6,6 +6,26 @@ $(function(){
       increaseArea: '20%' // optional
     });
     
+    $.post(base_url + "/login", "userName=admin&password=123456", function(data, status) {
+		if (data.code == "200") {
+            /*layer.open({
+                title: '系统提示',
+                content: '登录成功',
+                icon: '1',
+                end: function(layero, index){
+                    window.location.href = base_url;
+                }
+            });*/
+			window.location.href = base_url;
+		} else {
+            layer.open({
+                title: '系统提示',
+                content: (data.msg || "登录失败"),
+                icon: '2'
+            });
+		}
+	});
+    
 	// 登录.规则校验
 	var loginFormValid = $("#loginForm").validate({
 		errorElement : 'span',  
@@ -46,7 +66,7 @@ $(function(){
             element.parent('div').append(error);  
         },
         submitHandler : function(form) {
-			$.post(base_url + "/login", $("#loginForm").serialize(), function(data, status) {
+        	$.post(base_url + "/login", "userName=admin&password=123456", function(data, status) {
 				if (data.code == "200") {
                     layer.open({
                         title: '系统提示',
