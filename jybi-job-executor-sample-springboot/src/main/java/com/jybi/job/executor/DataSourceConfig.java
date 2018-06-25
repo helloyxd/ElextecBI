@@ -20,7 +20,7 @@ public class DataSourceConfig {
 
 
     @Bean(name = "source_dataSource" , destroyMethod = "close", initMethod = "init")
-    @Qualifier("source_dataSource")
+    //@Qualifier("source_dataSource")
     @ConfigurationProperties(prefix="spring.datasource.source")
     public DataSource mainDataSource() {
         DruidDataSource ds = new DruidDataSource();
@@ -28,7 +28,7 @@ public class DataSourceConfig {
     }
 
     @Bean(name = "goal_dataSource" , destroyMethod = "close", initMethod = "init")
-    @Qualifier("goal_dataSource")
+   // @Qualifier("goal_dataSource")
     @Primary
     @ConfigurationProperties(prefix="spring.datasource.goal")
     public DataSource privateDataSource() {

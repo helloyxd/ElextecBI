@@ -46,7 +46,7 @@ public class TriggerCallbackThread {
 
         triggerCallbackThread = new Thread(new Runnable() {
 
-            @Override
+         
             public void run() {
 
                 // normal callback

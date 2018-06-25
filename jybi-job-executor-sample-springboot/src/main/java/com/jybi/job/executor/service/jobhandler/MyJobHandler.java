@@ -48,6 +48,9 @@ public class MyJobHandler extends IJobHandler {
 //		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM");
 //		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
 		//params参数解析
+		System.out.println(params[0]);
+		params = null;
+		
 		if(params != null){
 			//开始年月日
 			StringBuilder beginDate = new StringBuilder("");

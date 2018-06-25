@@ -24,12 +24,10 @@ import java.util.Date;
 public class ExecutorBizImpl implements ExecutorBiz {
     private static Logger logger = LoggerFactory.getLogger(com.jybi.job.core.biz.impl.ExecutorBizImpl.class);
 
-    @Override
     public ReturnT<String> beat() {
         return ReturnT.SUCCESS;
     }
 
-    @Override
     public ReturnT<String> idleBeat(int jobId) {
 
         // isRunningOrHasQueue
@@ -45,7 +43,6 @@ public class ExecutorBizImpl implements ExecutorBiz {
         return ReturnT.SUCCESS;
     }
 
-    @Override
     public ReturnT<String> kill(int jobId) {
         // kill handlerThread, and create new one
         JobThread jobThread = XxlJobExecutor.loadJobThread(jobId);
@@ -57,7 +54,6 @@ public class ExecutorBizImpl implements ExecutorBiz {
         return new ReturnT<String>(ReturnT.SUCCESS_CODE, "job thread aleady killed.");
     }
 
-    @Override
     public ReturnT<LogResult> log(long logDateTim, int logId, int fromLineNum) {
         // log filename: yyyy-MM-dd/9999.log
         String logFileName = XxlJobFileAppender.makeLogFileName(new Date(logDateTim), logId);
@@ -66,7 +62,6 @@ public class ExecutorBizImpl implements ExecutorBiz {
         return new ReturnT<LogResult>(logResult);
     }
 
-    @Override
     public ReturnT<String> run(TriggerParam triggerParam) {
         // load old：jobHandler + jobThread
         JobThread jobThread = XxlJobExecutor.loadJobThread(triggerParam.getJobId());

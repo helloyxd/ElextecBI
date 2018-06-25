@@ -19,7 +19,7 @@ public class ShardingJobHandler extends IJobHandler {
 
 	@Override
 	public ReturnT<String> execute(String... params) throws Exception {
-
+		System.out.println("333333333");
 		// 分片参数
 		ShardingUtil.ShardingVO shardingVO = ShardingUtil.getShardingVo();
 		XxlJobLogger.log("分片参数：当前分片序号 = {0}, 总分片数 = {1}", shardingVO.getIndex(), shardingVO.getTotal());

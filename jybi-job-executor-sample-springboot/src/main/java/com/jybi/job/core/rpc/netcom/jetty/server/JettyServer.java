@@ -22,7 +22,6 @@ public class JettyServer {
 	private Thread thread;
 	public void start(final int port, final String ip, final String appName) throws Exception {
 		thread = new Thread(new Runnable() {
-			@Override
 			public void run() {
 
 				// The Server

@@ -23,7 +23,6 @@ import java.io.OutputStream;
 public class JettyServerHandler extends AbstractHandler {
 	private static Logger logger = LoggerFactory.getLogger(com.jybi.job.core.rpc.netcom.jetty.server.JettyServerHandler.class);
 
-	@Override
 	public void handle(String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
 		// invoke
